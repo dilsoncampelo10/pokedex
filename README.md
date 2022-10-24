@@ -1,6 +1,6 @@
-#Pokedéx
+# Pokedéx
 
-##Monte seu time pokémon
+## Monte seu time pokémon
 
 A aplicação trata-se de um sistema que permite montar e remontar sua equipe, no qual existe a permissão de adicionar, editar, excluir, visualizar todos ou visualizar um em específico.
 
