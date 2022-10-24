@@ -18,7 +18,8 @@ class SearchController extends Controller
         $pokemons = $pokemonDao->search($search);
         $data = [
             "pokemons" => $pokemons,
-            "search" => $search
+            "search" => $search,
+            "title" => "Pesquisa"
         ];
 
         $this->view('search', $data);

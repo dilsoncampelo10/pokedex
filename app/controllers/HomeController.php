@@ -14,7 +14,8 @@ class HomeController extends Controller
         $pokemons = $pokemonsDao->findAll();
 
         $data = [
-            "pokemons" => $pokemons
+            "pokemons" => $pokemons,
+            "title" => "Página principal"
         ];
         
         $this->view('home', $data);

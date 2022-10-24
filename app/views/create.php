@@ -3,7 +3,7 @@ require_once 'templates/header.php';
 ?>
 
 <div class="container">
-    <form action="http://localhost:50/pokedex/public/pokemon/create" method="post" enctype="multipart/form-data" class="mb-3">
+    <form action="<?= $base ?>/pokemon/create" method="post" enctype="multipart/form-data" class="mb-3">
         <label for="name" class="form-label">Nome</label>
         <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome do pokemon">
         <label for="type_p" class="form-label">Tipo</label>
@@ -15,7 +15,7 @@ require_once 'templates/header.php';
         <label for="image" class="form-label">Imagem</label>
         <input type="file" name="image" id="image" class="form-control">
         <input type="submit" value="Adicionar pokemon" class="btn btn-success mt-3">
-        <a href="http://localhost:50/pokedex/public/" class="btn btn-dark mt-3">Cancelar</a>
+        <a href="<?= $base ?>" class="btn btn-dark mt-3">Cancelar</a>
 
     </form>
 </div>

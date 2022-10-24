@@ -3,7 +3,7 @@ require_once 'templates/header.php';
 ?>
 
 <div class="container">
-    <form action="http://localhost:50/pokedex/public/pokemon/update/<?= $pokemon->getId() ?>" method="post" enctype="multipart/form-data" class="mb-3">
+    <form action="<?= $base ?>/pokemon/update/<?= $pokemon->getId() ?>" method="post" enctype="multipart/form-data" class="mb-3">
         <label for="name" class="form-label">Nome</label>
         <input type="text" name="name" id="name" class="form-control" placeholder="Novo nome do pokemon" value="<?= $pokemon->getName() ?>">
         <label for="type_p" class="form-label">Tipo</label>
@@ -14,9 +14,9 @@ require_once 'templates/header.php';
         <textarea name="description" id="description" rows="5" class="form-control" placeholder="Nova descrição do seu pokemon"><?= $pokemon->getDescription() ?></textarea>
         <label for="image" class="form-label">Imagem</label>
         <input type="file" name="image" id="image" class="form-control">
-        <img src="http://localhost:50/pokedex/public/media/<?=$pokemon->getImage()?>" class="d-block mt-2" alt="" id="mini-image">
+        <img src="<?= $base ?>/media/<?= $pokemon->getImage() ?>" class="d-block mt-2" alt="" id="mini-image">
         <input type="submit" value="Alterar pokemon" class="btn btn-success mt-3">
-        <a href="http://localhost:50/pokedex/public/" class="btn btn-dark mt-3">Cancelar</a>
+        <a href="<?= $base ?>" class="btn btn-dark mt-3">Cancelar</a>
     </form>
 
 </div>

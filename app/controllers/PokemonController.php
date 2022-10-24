@@ -11,7 +11,11 @@ class PokemonController extends Controller
 
     public function adicionar()
     {
-        $this->view('create');
+        $data = [
+            "title" => "Adicionar ao time"
+        ];
+
+        $this->view('create', $data);
     }
 
     public function create()
@@ -59,7 +63,8 @@ class PokemonController extends Controller
         $pokemon = $pokemonDao->findById($id);
 
         $data = [
-            "pokemon" => $pokemon
+            "pokemon" => $pokemon,
+            "title" => $pokemon->getName()
         ];
 
         $this->view('pokemon', $data);
@@ -70,7 +75,8 @@ class PokemonController extends Controller
         $pokemonDao = new PokemonDaoMysql();
         $pokemon = $pokemonDao->findById($id);
         $data = [
-            "pokemon" => $pokemon
+            "pokemon" => $pokemon,
+            "title" => "Editar - " . $pokemon->getName()
         ];
         $this->view("edit", $data);
     }
