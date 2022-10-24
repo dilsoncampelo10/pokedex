@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
-class ErrorController{
+use core\Controller;
+
+class ErrorController extends Controller{
     public function index(){
-        echo "Página não encontrada";
+        $this->view('404');
     }
 }
