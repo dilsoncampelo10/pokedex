@@ -29,7 +29,7 @@ require_once 'templates/header.php';
 
     <?php endif ?>
 
-    <?php if (count($pokemons) < 7) : ?>
+    <?php if (count($pokemons) < 6) : ?>
         <a href="<?= $base ?>/pokemon/adicionar" class="btn btn-success mb-3">Adicione um novo pokemon a sua equipe</a>
     <?php endif ?>
 </div>
