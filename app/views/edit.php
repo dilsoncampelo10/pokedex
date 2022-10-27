@@ -2,7 +2,7 @@
 require_once 'templates/header.php';
 ?>
 
-<div class="container">
+<div class="container min-vh-100">
     <form action="<?= $base ?>/pokemon/update/<?= $pokemon->getId() ?>" method="post" enctype="multipart/form-data" class="mb-3">
         <label for="name" class="form-label">Nome</label>
         <input type="text" name="name" id="name" class="form-control" placeholder="Novo nome do pokemon" value="<?= $pokemon->getName() ?>">

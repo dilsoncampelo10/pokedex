@@ -2,7 +2,7 @@
 require_once 'templates/header.php';
 ?>
 
-<div class="container mt-2">
+<div class="container mt-2 min-vh-100">
     <div class="card mb-3">
         <div class="row d-flex align-items-center">
             <div class="col-md-6"><img src="<?= $base ?>/media/<?= $pokemon->getImage() ?>" class="card-img-top img-thumbnail" alt="Foto do pokémon"></div>

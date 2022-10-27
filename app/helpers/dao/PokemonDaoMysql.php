@@ -1,11 +1,11 @@
 <?php
 
-namespace app\dao;
+namespace app\helpers\dao;
 
 
-use app\models\Pokemon;
+use app\helpers\bean\Pokemon;
 
-use app\interfaces\PokemonDao;
+use app\helpers\interfaces\PokemonDao;
 
 use PDO;
 

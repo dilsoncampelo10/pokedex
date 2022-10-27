@@ -2,9 +2,9 @@
 
 namespace app\controllers;
 
-use app\models\Pokemon;
+use app\helpers\bean\Pokemon;
 use core\Controller;
-use app\dao\PokemonDaoMysql;
+use app\helpers\dao\PokemonDaoMysql;
 
 class HomeController extends Controller
 {

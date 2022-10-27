@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\dao\PokemonDaoMysql;
+use app\helpers\dao\PokemonDaoMysql;
 use core\Controller;
 
 class SearchController extends Controller

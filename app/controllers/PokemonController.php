@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use core\Controller;
-use app\models\Pokemon;
-use app\dao\PokemonDaoMysql;
+use app\helpers\bean\Pokemon;
+use app\helpers\dao\PokemonDaoMysql;
 
 class PokemonController extends Controller
 {

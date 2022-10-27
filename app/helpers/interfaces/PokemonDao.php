@@ -1,8 +1,8 @@
 <?php
 
-namespace app\interfaces;
+namespace app\helpers\interfaces;
 
-use app\models\Pokemon;
+use app\helpers\bean\Pokemon;
 
 interface PokemonDao
 {
