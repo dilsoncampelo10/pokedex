@@ -2,16 +2,15 @@
 
 namespace app\controllers;
 
-use app\helpers\bean\Pokemon;
 use core\Controller;
-use app\helpers\dao\PokemonDaoMysql;
+use app\models\Pokemon;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $pokemonsDao = new PokemonDaoMysql();
-        $pokemons = $pokemonsDao->findAll();
+        $pokemon = new Pokemon();
+        $pokemons = $pokemon->read();
 
         $data = [
             "pokemons" => $pokemons,

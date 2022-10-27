@@ -5,6 +5,7 @@ namespace core;
 class Model
 {
     private $dao;
+    private $bean;
 
     public function __construct($dao)
     {

@@ -8,6 +8,7 @@ use core\Model;
 class Pokemon extends Model
 {
     private $pokemonDao;
+    
     function __construct()
     {
         $this->pokemonDao = new PokemonDaoMysql();
