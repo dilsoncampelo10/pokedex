@@ -2,17 +2,17 @@
 
 namespace app\helpers\interfaces;
 
-use app\helpers\bean\Pokemon;
+use app\helpers\bean\PokemonBean;
 
 interface PokemonDao
 {
-    public function add(Pokemon $pokemon);
+    public function add(PokemonBean $pokemon);
 
     public function findAll();
 
     public function findById($id);
 
-    public function update(Pokemon $pokemon);
+    public function update(PokemonBean $pokemon);
 
     public function delete($id);
 }

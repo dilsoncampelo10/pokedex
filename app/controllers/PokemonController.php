@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use core\Controller;
-use app\helpers\bean\Pokemon;
+use app\helpers\bean\PokemonBean;
 use app\helpers\dao\PokemonDaoMysql;
 
 class PokemonController extends Controller
@@ -20,7 +20,7 @@ class PokemonController extends Controller
 
     public function create()
     {
-        $pokemon = new Pokemon();
+        $pokemon = new PokemonBean();
         $pokemonDao = new PokemonDaoMysql();
 
 
@@ -83,7 +83,7 @@ class PokemonController extends Controller
 
     public function update($id)
     {
-        $pokemon = new Pokemon();
+        $pokemon = new PokemonBean();
         $pokemonDao = new PokemonDaoMysql();
 
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);

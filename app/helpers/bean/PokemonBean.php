@@ -3,7 +3,7 @@
 namespace app\helpers\bean;
 
 
-class Pokemon
+class PokemonBean
 {
     private $id;
     private $name;
@@ -64,15 +64,3 @@ class Pokemon
     }
 }
 
-interface PokemonDao
-{
-    public function add(Pokemon $pokemon);
-
-    public function findAll();
-
-    public function findById($id);
-
-    public function update(Pokemon $pokemon);
-
-    public function delete($id);
-}

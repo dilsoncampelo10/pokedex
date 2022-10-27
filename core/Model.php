@@ -2,25 +2,34 @@
 
 namespace core;
 
-use core\config\Config;
-use PDO;
-use PDOException;
-
 class Model
 {
-    protected $con;
+    private $dao;
 
-    public function __construct()
+    public function __construct($dao)
     {
-        $this->getConnect();
+        $this->dao = $dao;
     }
 
-    private function getConnect()
+    public function create($bean)
     {
-        try {
-            $this->con = new PDO(Config::DRIVER . ":dbname=" . Config::DBNAME . ";", Config::HOST, Config::USER, Config::PASSWORD);
-        } catch (PDOException $e) {
-            echo "Erro de conexão";
-        }
+        return $this->dao->add($bean);
+    }
+
+    public function read()
+    {
+        return $this->dao->findAll();
+    }
+    public function readById($id)
+    {
+        return $this->dao->findById($id);
+    }
+    public function update($bean)
+    {
+        return $this->dao->update($bean);
+    }
+    public function delete($id)
+    {
+        return $this->dao->delete($id);
     }
 }

@@ -3,7 +3,7 @@
 namespace app\helpers\dao;
 
 
-use app\helpers\bean\Pokemon;
+use app\helpers\bean\PokemonBean;
 
 use app\helpers\interfaces\PokemonDao;
 
@@ -22,7 +22,7 @@ class PokemonDaoMysql implements PokemonDao
         $this->con = new PDO("mysql:dbname=pokedex;localhost", "root", "");
     }
 
-    public function add(Pokemon $pokemon)
+    public function add(PokemonBean $pokemon)
     {
         $stm = $this->con->prepare("INSERT INTO pokemons (name,type_primary,type_secondary,description,image) VALUES (:name,:typeP,:typeS,:description,:image)");
         $stm->bindValue(":name", $pokemon->getName());
@@ -43,7 +43,7 @@ class PokemonDaoMysql implements PokemonDao
         if ($stm->rowCount() > 0) {
             $dados = $stm->fetchAll(PDO::FETCH_ASSOC);
             foreach ($dados as $dado) {
-                $pokemon = new Pokemon();
+                $pokemon = new PokemonBean();
                 $pokemon->setId($dado['id']);
                 $pokemon->setName($dado['name']);
                 $pokemon->setTypePrimary($dado['type_primary']);
@@ -58,7 +58,7 @@ class PokemonDaoMysql implements PokemonDao
 
     public function findById($id)
     {
-        $pokemon = new Pokemon();
+        $pokemon = new PokemonBean();
         $stm = $this->con->prepare("SELECT * FROM pokemons WHERE id = :id");
         $stm->bindValue(":id", $id);
         $stm->execute();
@@ -76,7 +76,7 @@ class PokemonDaoMysql implements PokemonDao
         return $pokemon;
     }
 
-    public function update(Pokemon $pokemon)
+    public function update(PokemonBean $pokemon)
     {
         $stm = $this->con->prepare("UPDATE pokemons SET name = :name, type_primary = :typeP, type_secondary = :typeS,description = :description, image =:image WHERE id = :id");
         $stm->bindValue(":id", $pokemon->getId());
@@ -108,7 +108,7 @@ class PokemonDaoMysql implements PokemonDao
             $data = $stm->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($data as $d) {
-                $pokemon = new Pokemon();
+                $pokemon = new PokemonBean();
                 $pokemon->setName($d['name']);
                 $pokemon->setTypePrimary($d['type_primary']);
                 $pokemon->setTypeSecondary($d['type_secondary']);
