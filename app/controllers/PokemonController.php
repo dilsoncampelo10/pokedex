@@ -5,6 +5,7 @@ namespace app\controllers;
 use core\Controller;
 use app\helpers\bean\PokemonBean;
 use app\helpers\dao\PokemonDaoMysql;
+use app\models\Pokemon;
 
 class PokemonController extends Controller
 {
@@ -58,13 +59,13 @@ class PokemonController extends Controller
 
     public function show($id)
     {
-        $pokemonDao = new PokemonDaoMysql();
+        $pokemon = new Pokemon();
 
-        $pokemon = $pokemonDao->findById($id);
+        $pokemons = $pokemon->readById($id);
 
         $data = [
-            "pokemon" => $pokemon,
-            "title" => $pokemon->getName()
+            "pokemon" => $pokemons,
+            "title" => $pokemons->getName()
         ];
 
         $this->view('pokemon', $data);

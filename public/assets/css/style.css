@@ -22,3 +22,11 @@ body{
 #footer{
     padding: 30px;
 }
+
+#error_body{
+    background-image: url('../images/pikachu_error.png');
+
+    min-height: 40vw;
+    color: white;
+    
+}

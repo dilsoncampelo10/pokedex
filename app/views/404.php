@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?= $base ?>/assets/css/style.css">
 </head>
 
-<body>
+<body id="error_body">
 
     <div class="container">
         <h1>Página não encontrada</h1>
@@ -22,6 +22,7 @@
         <a href="<?= $base ?>"><i class="fa-sharp fa-solid fa-rotate-left"></i> Voltar</a>
     </div>
 
+    <img src="<?= $base ?>" alt="">
 </body>
 
 </html>

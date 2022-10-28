@@ -7,7 +7,7 @@ class Model
     private $dao;
     private $bean;
 
-    public function __construct($dao)
+    public function __construct($dao,$bean)
     {
         $this->dao = $dao;
     }
