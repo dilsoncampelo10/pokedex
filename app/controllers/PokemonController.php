@@ -9,6 +9,13 @@ use app\models\Pokemon;
 
 class PokemonController extends Controller
 {
+    function __construct()
+    {
+        if ($_SESSION['user']) {
+        } else {
+            $this->redirect('login');
+        }
+    }
 
     public function adicionar()
     {

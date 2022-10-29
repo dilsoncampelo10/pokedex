@@ -7,6 +7,13 @@ use core\Controller;
 
 class SearchController extends Controller
 {
+    function __construct()
+    {
+        if ($_SESSION['user']) {
+        } else {
+            $this->redirect('login');
+        }
+    }
     public function index()
     {
 
@@ -23,6 +30,5 @@ class SearchController extends Controller
         ];
 
         $this->view('search', $data);
-
     }
 }

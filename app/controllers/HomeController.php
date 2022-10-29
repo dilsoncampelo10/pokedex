@@ -10,9 +10,8 @@ class HomeController extends Controller
 
     function __construct()
     {
-        if($_SESSION['user']){
-
-        } else{
+        if ($_SESSION['user']) {
+        } else {
             $this->redirect('login');
         }
     }
@@ -26,7 +25,7 @@ class HomeController extends Controller
             "pokemons" => $pokemons,
             "title" => "Página principal"
         ];
-        
+
         $this->view('home', $data);
     }
 }
